@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Color Box</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    #color-box {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div id="color-box">Click the button!</div>
+    <button onclick="generateRandomColor()">Generate Random Color</button>
+  </div>
+
+  <script>
+    function generateRandomColor() {
+      // Generate random values for red, green, and blue
+      const red = Math.floor(Math.random() * 256);
+      const green = Math.floor(Math.random() * 256);
+      const blue = Math.floor(Math.random() * 256);
+
+      // Create the RGB color string
+      const color = `rgb(${red}, ${green}, ${blue})`;
+
+      // Apply the color to the box and display the color code
+      const colorBox = document.getElementById('color-box');
+      colorBox.style.backgroundColor = color;
+      colorBox.textContent = color;
+    }
+  </script>
+</body>
+</html>
